@@ -6,7 +6,7 @@ import { User } from "../types/types.js";
 const SECRET_KEY = "your-secret-key"; // Ganti untuk keamanan
 
 export const login = async (req: Request, res: Response) => {
-  const { email, password } = req.body; // Ganti dari username ke email
+  const { email, password } = req.body; 
 
   await db.read();
   const user = db.data?.users.find(
@@ -26,12 +26,12 @@ export const login = async (req: Request, res: Response) => {
     user: {
       id: user.id,
       email: user.email,
-      username: user.username, // ← tambahkan ini
+      username: user.username, 
     },
   });
 };
 
 export const logout = async (_req: Request, res: Response) => {
-  // Dengan JWT, logout dilakukan di sisi frontend (hapus token)
+  
   res.json({ message: "Logged out (client-side)" });
 };
