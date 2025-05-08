@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "User 1",
+      "email": "user1@webtech.id",
+      "password": "password1"
+    },
+    {
+      "id": "2",
+      "username": "User 2",
+      "email": "user2@webtech.id",
+      "password": "password2"
+    },
+    {
+      "id": "3",
+      "username": "User 3",
+      "email": "user3@worldskills.org",
+      "password": "password3"
+    }
+  ],
+  "sessions": [],
+  "forms": [],
+  "questions": [],
+  "responses": []
+}
