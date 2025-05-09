@@ -33,15 +33,12 @@ const FormDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const dispatch: AppDispatch = useDispatch();
   const [copied, setCopied] = React.useState(false);
-
-  // State for tracking whether responses are expanded
   const [expanded, setExpanded] = useState(false);
 
   const { formDetail, loading, error } = useSelector(
     (state: RootState) => state.forms
   );
 
-  // Decode user ID from token
   const token = localStorage.getItem("token");
   let userId: string | null = null;
   if (token) {
