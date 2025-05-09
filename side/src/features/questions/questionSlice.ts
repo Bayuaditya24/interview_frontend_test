@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-// Define the structure of a question
+
 export interface Question {
   id?: number;
   name: string;
@@ -12,9 +12,9 @@ export interface Question {
 }
 
 interface QuestionState {
-  questions: Question[]; // This will store all questions
+  questions: Question[]; 
   questionsByForm: {
-    [slug: string]: Question[]; // Store questions by form slug
+    [slug: string]: Question[]; 
   };
   loading: boolean;
   error: string | null;
@@ -22,12 +22,12 @@ interface QuestionState {
 
 const initialState: QuestionState = {
   questions: [],
-  questionsByForm: {}, // Initialize as an empty object
+  questionsByForm: {},
   loading: false,
   error: null,
 };
 
-// Fetch questions by form slug
+
 export const fetchQuestions = createAsyncThunk(
   "questions/fetchQuestions",
   async (slug: string, { rejectWithValue }) => {
@@ -54,7 +54,6 @@ export const fetchQuestions = createAsyncThunk(
   }
 );
 
-// Add a new question to a form
 export const addQuestion = createAsyncThunk(
   "questions/addQuestion",
   async (
@@ -92,7 +91,6 @@ export const addQuestion = createAsyncThunk(
   }
 );
 
-// Delete a question from a form
 export const deleteQuestion = createAsyncThunk(
   "questions/deleteQuestion",
   async (
@@ -133,7 +131,6 @@ const questionSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      // Fetch questions for a specific form
       .addCase(fetchQuestions.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -146,14 +143,12 @@ const questionSlice = createSlice({
         state.loading = false;
         state.error = action.payload as string;
       })
-      // Add a new question to a specific form
       .addCase(addQuestion.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
       .addCase(addQuestion.fulfilled, (state, action) => {
         state.loading = false;
-        // We need to add the question to the correct form's array
         const slug = action.payload.form_id?.toString();
         if (slug) {
           if (!state.questionsByForm[slug]) {
@@ -166,7 +161,6 @@ const questionSlice = createSlice({
         state.loading = false;
         state.error = action.payload as string;
       })
-      // Delete a question from a specific form
       .addCase(deleteQuestion.pending, (state) => {
         state.loading = true;
         state.error = null;
