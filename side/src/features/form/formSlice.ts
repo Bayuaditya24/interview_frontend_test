@@ -45,7 +45,6 @@ const initialState: FormState = {
   error: null,
 };
 
-// Async thunk untuk fetch forms
 export const fetchForms = createAsyncThunk(
   "forms/fetchForms",
   async (_, thunkAPI) => {
@@ -65,7 +64,7 @@ export const fetchForms = createAsyncThunk(
   }
 );
 
-// Ambil detail form berdasarkan slug
+
 export const fetchFormDetail = createAsyncThunk(
   "forms/fetchFormDetail",
   async (slug: string, thunkAPI) => {
@@ -88,7 +87,6 @@ export const fetchFormDetail = createAsyncThunk(
   }
 );
 
-// Async thunk untuk memperbarui allowed_domains pada form
 export const updateAllowedDomains = createAsyncThunk(
   "forms/updateAllowedDomains",
   async (data: { formId: number; allowedDomains: string[] }, thunkAPI) => {
@@ -113,8 +111,6 @@ export const updateAllowedDomains = createAsyncThunk(
     }
   }
 );
-
-// formSlice.ts
 
 export const fetchFormResponses = createAsyncThunk(
   "forms/fetchFormResponses",
@@ -179,7 +175,7 @@ const formSlice = createSlice({
           state.formDetail = {
             ...state.formDetail,
             responses: action.payload,
-            limit_one_response: state.formDetail.limit_one_response ?? 0, // ← default fallback
+            limit_one_response: state.formDetail.limit_one_response ?? 0, 
           };
         }
       })
