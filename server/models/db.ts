@@ -1,6 +1,6 @@
 import { LowSync } from "lowdb";
 import { JSONFileSync } from "lowdb/node";
-import { DatabaseSchema } from "../types/types.js"; // pastikan sesuai dengan struktur kamu
+import { DatabaseSchema } from "../types/types.js"; 
 
 const adapter = new JSONFileSync<DatabaseSchema>("db.json");
 
@@ -12,7 +12,7 @@ const db = new LowSync<DatabaseSchema>(adapter, {
   responses: [],
 });
 
-db.read(); // Memuat isi db.json ke db.data
-db.write(); // Menyimpan default jika file kosong
+db.read(); 
+db.write(); 
 
 export default db;
