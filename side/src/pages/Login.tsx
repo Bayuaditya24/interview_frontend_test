@@ -100,9 +100,9 @@ const Login: React.FC = () => {
                 variant="contained"
                 fullWidth
                 sx={{
-                  backgroundColor: "#003366", // Dark blue color for the button
+                  backgroundColor: "#003366", 
                   "&:hover": {
-                    backgroundColor: "#1a237e", // Lighter blue on hover
+                    backgroundColor: "#1a237e", 
                   },
                 }}
                 disabled={loading}
