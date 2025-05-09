@@ -10,12 +10,11 @@ export const loginAPI = async (email: string, password: string) => {
     throw new Error(data.message || "Login failed");
   }
 
-  const result = await response.json(); // expected: { token }
+  const result = await response.json(); 
 
-  // Simpan token di localStorage
   if (result.token) {
-    localStorage.setItem("accessToken", result.token); // Simpan token dengan nama 'accessToken'
+    localStorage.setItem("accessToken", result.token); 
   }
 
-  return result; // Anda bisa return hasil login jika perlu
+  return result; 
 };
