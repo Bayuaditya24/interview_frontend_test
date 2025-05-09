@@ -18,10 +18,9 @@ export const login = createAsyncThunk(
     thunkAPI
   ) => {
     try {
-      const data = await loginAPI(email, password); // Menangani login dengan API
-      // Menyimpan objek user secara lengkap di localStorage
+      const data = await loginAPI(email, password); 
       localStorage.setItem("user", JSON.stringify(data.user));
-      localStorage.setItem("token", data.token); // Simpan token
+      localStorage.setItem("token", data.token); 
       return {
         token: data.token,
         username: data.user.username,
