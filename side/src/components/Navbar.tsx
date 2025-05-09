@@ -7,16 +7,16 @@ import Typography from "@mui/material/Typography";
 import { toggleSidebar } from "./sidebarSlice";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-import { logout } from "../features/auth/authSlice"; // Adjust path if necessary
+import { logout } from "../features/auth/authSlice"; 
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { AppDispatch } from "../app/store"; // Adjust path if necessary
+import { AppDispatch } from "../app/store"; 
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import LogoutIcon from "@mui/icons-material/Logout";
 
-// Helper to fetch the username
+
 const getUsername = () => {
   const user = localStorage.getItem("user");
   return user ? JSON.parse(user).username : "Guest";
