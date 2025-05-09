@@ -36,7 +36,7 @@ const Home: React.FC = () => {
   );
 
   useEffect(() => {
-    dispatch(fetchForms()); // Get the list of forms
+    dispatch(fetchForms()); // Get the list of form
   }, [dispatch]);
 
   return (
@@ -45,7 +45,7 @@ const Home: React.FC = () => {
         📋 Forms
       </Typography>
 
-      {/* Display loading spinner */}
+      {/* Display loading spinner */
       {loading && (
         <Box
           sx={{
