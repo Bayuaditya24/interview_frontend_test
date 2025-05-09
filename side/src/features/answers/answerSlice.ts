@@ -26,10 +26,10 @@ const answerSlice = createSlice({
       );
 
       if (existingAnswer) {
-        // Update the existing answer
+    
         existingAnswer.value = value;
       } else {
-        // Add new answer
+      
         state.answers.push(action.payload);
       }
     },
