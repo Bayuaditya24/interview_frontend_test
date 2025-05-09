@@ -22,7 +22,7 @@ export interface Form {
 }
 
 export interface Question {
-  id: number; // Change from string to number
+  id: number; 
   name: string;
   choice_type: string;
   choices: string[];
@@ -37,7 +37,7 @@ export interface FormDetailResponse {
     name: string;
     slug: string;
     description?: string;
-    limit_one_response: number; // integer 0/1 di response API
+    limit_one_response: number; 
     creator_id: string;
     allowed_domains: string[];
     questions: Question[];
